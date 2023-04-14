@@ -8,7 +8,7 @@ can be).  Rather, they are used by factory functions that return a new function
 with the interpolation kernel (the input `f`) enclosed, thereby accelerating the
 code.  See `.tools/make_interpolator`.
 
-This subpackage is useful for interpolation when the evaluation site is known,
+This package is useful for interpolation when the evaluation site is known,
 so that only one or a few interpolations are needed.  However, when 
 interpolation must be repeated many times, such as when solving a nonlinear
 equation involving the interpolants, the `ppinterp` subpackage from `neutralocean`
