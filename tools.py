@@ -246,23 +246,6 @@ def make_interpolator(interpolant="linear", deriv=0, kind="u", two=False):
     return fcn
 
 
-# Does not work.  Cannot index a tuple inside the guvectorize, it seems...
-# def make_d(*f):
-#     n = len(f)
-
-#     @nb.guvectorize(
-#         [(f8, f8[:], f8[:], nb.int64, f8[:])],
-#         "(),(n),(n),()->()",
-#     )
-#     def fcn(x, X, Y, d, y):
-#         if d < n:
-#             y[0] = interp_1(x, X, Y, f[d])
-#         else:
-#             y[0] = 0.0
-
-#     return fcn
-
-
 def make_kernel(interpolant, deriv):
     """
     Select the interpolating kernel(s) for a given interpolation method and derivative.
